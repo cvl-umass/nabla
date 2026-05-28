@@ -1,0 +1,39 @@
+model_type: omini 
+
+flux_path: "../nabla/ckpts/FLUX.1-Kontext-dev" 
+
+train:
+  accumulate_grad_batches: 1
+  batch_size: 5
+  dataloader_workers: 12
+  save_interval: 1000
+  sample_interval: 1000
+  max_steps: 10000
+  gradient_checkpointing: true
+  single_adapter: true
+
+  conditioning_mode: "depth" 
+  
+  dataset:
+    root: "../data/nabirds"
+    condition_size: [1024, 1024]
+    target_size: [1024, 1024]
+    augment: false
+    long_captions: true
+    dot_size: 15
+    line_thickness: 10
+    skeleton_sparse: false
+
+  optimizer:
+    type: "Prodigy"
+    params:
+      lr: 1
+      use_bias_correction: true
+      safeguard_warmup: true
+      weight_decay: 0.01
+
+  lora_config:
+    r: 16
+    lora_alpha: 16
+    init_lora_weights: "gaussian"
+    target_modules: "(.*x_embedder|.*(?<!single_)transformer_blocks\\.[0-9]+\\.norm1\\.linear|.*(?<!single_)transformer_blocks\\.[0-9]+\\.attn\\.to_k|.*(?<!single_)transformer_blocks\\.[0-9]+\\.attn\\.to_q|.*(?<!single_)transformer_blocks\\.[0-9]+\\.attn\\.to_v|.*(?<!single_)transformer_blocks\\.[0-9]+\\.attn\\.to_out\\.0|.*(?<!single_)transformer_blocks\\.[0-9]+\\.ff\\.net\\.2|.*single_transformer_blocks\\.[0-9]+\\.norm\\.linear|.*single_transformer_blocks\\.[0-9]+\\.proj_mlp|.*single_transformer_blocks\\.[0-9]+\\.proj_out|.*single_transformer_blocks\\.[0-9]+\\.attn.to_k|.*single_transformer_blocks\\.[0-9]+\\.attn.to_q|.*single_transformer_blocks\\.[0-9]+\\.attn.to_v|.*single_transformer_blocks\\.[0-9]+\\.attn.to_out)"
