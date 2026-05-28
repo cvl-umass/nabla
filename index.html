@@ -1,0 +1,277 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+  <title>Not All Birds Look The Same: Identity-Preserving Generation For Birds</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<meta property="og:title" content="Not All Birds Look The Same" />
+
+<style type="text/css" media="all">
+IMG {
+	PADDING-RIGHT: 0px;
+	PADDING-LEFT: 0px;
+	FLOAT: right;
+	PADDING-BOTTOM: 0px;
+	PADDING-TOP: 0px
+}
+#primarycontent {
+	MARGIN-LEFT: auto; ; WIDTH: expression(document.body.clientWidth >
+1000? "1000px": "auto" ); MARGIN-RIGHT: auto; TEXT-ALIGN: left; max-width:
+1000px }
+BODY {
+	TEXT-ALIGN: center
+}
+</style>
+
+<style type="text/css">
+  body {
+    font-family: "Titillium Web","HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight:300;
+    font-size:18px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0px;
+    width: 100%;
+  }
+
+  h1 {
+    font-weight:300;
+  }
+
+  div {
+    max-width: 95%;
+    margin:auto;
+    padding: 10px;
+  }
+
+  .table-like {
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+
+  .disclaimerbox {
+    background-color: #eee;
+    border: 1px solid #eeeeee;
+    border-radius: 10px ;
+    -moz-border-radius: 10px ;
+    -webkit-border-radius: 10px ;
+    padding: 20px;
+  }
+
+  video.header-vid {
+    height: 140px;
+    border: 1px solid black;
+    border-radius: 10px ;
+    -moz-border-radius: 10px ;
+    -webkit-border-radius: 10px ;
+  }
+
+  img {
+    padding: 0;
+    display: block;
+    margin: 0 auto;
+    max-height: 100%;
+    max-width: 100%;
+  }
+
+  iframe {
+    max-width: 100%;
+  }
+
+  img.header-img {
+    height: 140px;
+    border: 1px solid black;
+    border-radius: 10px ;
+    -moz-border-radius: 10px ;
+    -webkit-border-radius: 10px ;
+  }
+
+  img.rounded {
+    border: 1px solid #eeeeee;
+    border-radius: 10px ;
+    -moz-border-radius: 10px ;
+    -webkit-border-radius: 10px ;
+  }
+
+  a:link,a:visited
+  {
+    color: #1367a7;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #208799;
+  }
+
+  td.dl-link {
+    height: 160px;
+    text-align: center;
+    font-size: 22px;
+  }
+
+  .layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+    box-shadow:
+            0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+            5px 5px 0 0px #fff, /* The second layer */
+            5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+            10px 10px 0 0px #fff, /* The third layer */
+            10px 10px 1px 1px rgba(0,0,0,0.35), /* The third layer shadow */
+            15px 15px 0 0px #fff, /* The fourth layer */
+            15px 15px 1px 1px rgba(0,0,0,0.35), /* The fourth layer shadow */
+            20px 20px 0 0px #fff, /* The fifth layer */
+            20px 20px 1px 1px rgba(0,0,0,0.35), /* The fifth layer shadow */
+            25px 25px 0 0px #fff, /* The fifth layer */
+            25px 25px 1px 1px rgba(0,0,0,0.35); /* The fifth layer shadow */
+    margin-left: 10px;
+    margin-right: 45px;
+  }
+
+
+  .layered-paper { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+    box-shadow:
+            0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+            5px 5px 0 0px #fff, /* The second layer */
+            5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+            10px 10px 0 0px #fff, /* The third layer */
+            10px 10px 1px 1px rgba(0,0,0,0.35); /* The third layer shadow */
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-right: 30px;
+    margin-bottom: 5px;
+  }
+
+  .vert-cent {
+    position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+  }
+
+  hr
+  {
+    border: 0;
+    height: 1px;
+    max-width: 1100px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+  }
+
+  #authors td {
+    padding-bottom:5px;
+    padding-top:30px;
+  }
+
+  .code-block{
+    font-size:14px; 
+    text-align: left;
+    max-width:700px;
+    overflow-x: scroll;
+    background-color:azure;
+    border-color: rgb(192, 192, 192);
+    border-width: 2px;
+    border-radius: 10px;
+    border-style:solid;
+  }
+  .text-block{
+    font-size:16px; 
+    text-align: justify;
+    max-width:750px
+  }
+</style>
+
+<body>
+
+<div id="primarycontent">
+<center><h1 style="font-size: 225%">The Merlin L48 Spectrogram Dataset</h1></center>
+<center>
+  <!-- First row --->
+  <div class="table-like" style="max-width:800px;margin:auto;">
+    
+    <div>
+        <center>
+          <a href="https://aaronsun1030.github.io" target="_blank" style="font-size: larger">Aaron Sun</a>
+        </center>
+        <center>
+            UMass Amherst
+        </center>
+      </div>
+
+      <div>
+        <center>
+          <a href="https://oindrilasaha.github.io/" target="_blank" style="font-size: larger">Oindrila Saha</a>
+        </center>
+        <center>
+            UMass Amherst
+        </center>
+      </div>
+      
+      <div>
+        <center>
+          <a href="https://people.cs.umass.edu/~smaji/" target="_blank" style="font-size: larger">Subhransu Maji</a>
+        </center>
+        <center>
+            UMass Amherst
+        </center>
+      </div>
+      
+    </div>
+  
+
+  <!-- Second row --->
+
+
+
+
+<div class="table-like" style="justify-content:space-evenly;max-width:900px;margin:auto;">
+  <center>
+    <table>
+      <tr>
+        <td style="font-size:20px;margin:20px;font-family:monospace">
+          <a style="margin:2px" href="https://arxiv.org/abs/2512.04485">[arXiv]</a>
+        </td> 
+        <td style="font-size:20px;margin:20px;font-family:monospace">
+          <a style="margin:2px" href="https://github.com/cvl-umass/nabla">[Code]</a>
+        </td>
+        <td style="font-size:20px;margin:20px;font-family:monospace">
+          <a style="margin:2px" href="https://github.com/cvl-umass/nabla/tree/main/datasets">[Data]</a>
+        </td>
+      </tr>
+    </table>
+  </center>
+</div>
+<center>
+<br>
+
+
+<center>
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td align="center" valign="bottom" style="max-width:800px">
+            <img class="result" src="assets/fig1.png" style="width: 100%">
+        </td>
+      </tr>
+    </table>
+</center>
+
+<h2>Abstract</h2>
+<div style="font-size:16px; text-align: justify;max-width:700px">
+<p>
+    Since the advent of controllable image generation, increasingly rich modes of control have enabled greater customization and accessibility for everyday users. Zero-shot, identity-preserving models such as Insert Anything and OminiControl now support applications like virtual try-on without requiring additional fine-tuning. While these models may be fitting for humans and rigid everyday objects, they still have limitations for non-rigid or fine-grained categories. These domains often lack accessible, high-quality data -- especially videos or multi-view observations of the same subject -- making them difficult both to evaluate and to improve upon. Yet, such domains are essential for moving beyond content creation toward applications that demand accuracy and fine detail. Birds are an excellent domain for this task: they exhibit high diversity, require fine-grained cues for identification, and come in a wide variety of poses. We introduce the NABirds Look-Alikes (NABLA) dataset, consisting of 4,759 expert-curated image pairs. Together with 1,073 pairs collected from multi-image observations on iNaturalist and a small set of videos, this forms a benchmark for evaluating identity-preserving generation of birds. We show that state-of-the-art baselines fail to maintain identity on this dataset, and we demonstrate that training on images grouped by species, age, and sex -- used as a proxy for identity -- substantially improves performance on both seen and unseen species. 
+</p>
+</div>
+
+<h2>Citation</h2>
+<pre style="font-size:14px; text-align: left;max-width:700px;overflow-x: scroll;background-color:beige;border-color: rgb(192, 192, 192);border-width: 2px;border-radius: 10px;border-style:solid;">
+<code>
+@article{sun2025not,
+  title={Not All Birds Look The Same: Identity-Preserving Generation For Birds},
+  author={Sun, Aaron and Saha, Oindrila and Maji, Subhransu},
+  journal={arXiv preprint arXiv:2512.04485},
+  year={2025}
+}
+</code>
+</pre>
+
+
+</body>
+
+
+</html>

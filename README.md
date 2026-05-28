@@ -1,8 +1,10 @@
-# NABLA: Identity-Preserving Generation for Birds (CVPR26 Highlight)
+# NABLA: Identity-Preserving Generation for Birds
+
+[site](https://cvl-umass.github.io/nabla/) [arxiv](https://arxiv.org/abs/2512.04485) [data](https://github.com/cvl-umass/nabla/tree/main/datasets)
 
 This repository contains the official code for **"Not All Birds Look The Same: Identity-Preserving Generation For Birds"**. 
 
-NABLA is a unified framework combining the capabilities of bounding-box conditional generation (Insert Anything) and global spatial conditional generation (OminiControl) to evaluate and train identity-preserving diffusion models.
+This codebase is a unified framework combining the capabilities of bounding-box conditional generation (Insert Anything) and global spatial conditional generation (OminiControl) to evaluate and train identity-preserving diffusion models.
 
 ## Repository Structure
 
@@ -69,20 +71,6 @@ python -m torch.distributed.run --nproc_per_node=${NUM_GPUS} \
 - `--recompute_metrics`: Loads existing images to recalculate inline metrics (LPIPS, L2, SigLIP, DINO) without regenerating the images.
 
 *Outputs (generated images, stitched comparison grids, and `.csv` metric logs) will be saved in `out/my_experiment/eval_<dataset>_<split>_<ckpt>`.*
-
-## Distribution Metrics (FID & CMMD)
-
-While `generate_eval.py` calculates pairwise metrics (like LPIPS and DINO similarity), dataset-wide distribution metrics are calculated using `src/shared/metrics/calc_metrics.py`.
-
-```bash
-python src/shared/metrics/calc_metrics.py \
-    --gt path/to/ground_truth_images \
-    --pred path/to/generated_images \
-    --metrics fid,cmmd \
-    --batch_size 32
-```
-
-*Note: You must have the required metric repositories (e.g., `pytorch-fid`) installed and configured as defined in the script.*
 
 ## Configuration Guide
 
