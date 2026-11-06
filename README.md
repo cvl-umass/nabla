@@ -1,6 +1,6 @@
-# NABLA: Identity-Preserving Generation for Birds
+# NABLA: Identity-Preserving Generation for Birds [CVPR26 Highlight]
 
-[site](https://cvl-umass.github.io/nabla/) [arxiv](https://arxiv.org/abs/2512.04485) [data](https://github.com/cvl-umass/nabla/tree/main/datasets)
+[site](https://cvl-umass.github.io/nabla/) [arxiv](https://arxiv.org/abs/2512.04485) [CVPR2026](https://openaccess.thecvf.com/content/CVPR2026/html/Sun_Not_All_Birds_Look_The_Same_Identity-Preserving_Generation_For_Birds_CVPR_2026_paper.html) [data](https://github.com/cvl-umass/nabla/tree/main/datasets) 
 
 This repository contains the official code for **"Not All Birds Look The Same: Identity-Preserving Generation For Birds"**. 
 
